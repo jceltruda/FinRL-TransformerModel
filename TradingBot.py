@@ -4,6 +4,11 @@ from alpaca.trading.enums import OrderSide, TimeInForce
 from alpaca.data import StockHistoricalDataClient, StockTradesRequest
 from datetime import datetime
 
+def getPrediction(symbol, actualPrice):
+     # Stub Coded
+     # Will integrate with google drive to use Fine-tuned model for stock prediction
+     return actualPrice
+
 # Returns data needed by analyze function
 def getData(symbol):
 
@@ -27,12 +32,6 @@ def getData(symbol):
     currentPrice = trades[0]
     predictedClose = getPrediction(symbol, currentPrice)
     return currentPrice, predictedClose
-
-
-def getPrediction(symbol, actualPrice):
-     # Stub Coded
-     # Will integrate with google drive to use Fine-tuned model for stock prediction
-     return actualPrice
 
 # Function to determine if we should buy, sell, or hold
 def analyze(symbol):
